@@ -14,7 +14,10 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
+//Route to get the goals or in any case information stored in the db
 app.use('/api/goals', require('./routes/goalroute'))
+//Route to fetch user
+app.use('/api/users', require('./routes/userroute'))
 
 //error handler midleware
 app.use(errorHandler)
